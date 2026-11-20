@@ -1,0 +1,9 @@
+project: savantenvs/sonic-buildimage
+target: nss-radius-conf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/nss-radius-conf/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_nss_radius_conf
+    libfuzzer: true
+    timeout: 5
