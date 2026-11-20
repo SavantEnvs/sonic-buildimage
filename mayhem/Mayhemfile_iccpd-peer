@@ -1,0 +1,9 @@
+project: savantenvs/sonic-buildimage
+target: iccpd-peer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/iccpd-peer/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_iccpd_peer
+    libfuzzer: true
+    timeout: 5
